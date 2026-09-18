@@ -101,11 +101,35 @@
 
 // ↓↓↓ 从这里开始写你的代码（Car 类定义写在这两块注释之间）↓↓↓
 
+class Car {
+private:
+    std::string color;
+    int number;
 
+public:
+    Car(std::string c,int n) {
+        color = c;
+        number = n;
+    }
+    ~Car() {
+        std::cout << "Car 对象被销毁了，车牌号 " << number << "\n";
+     
+    }
+
+
+    void display () {
+        std::cout<<"颜色："<< color<<"  ";
+        std::cout<<"车牌号："<< number<<'\n';
+    }
+};
 // ↑↑↑ Car 类定义写到这里结束 ↑↑↑
 
 int main() {
+     Car car1("红色", 1001);     // 创建第 1 辆车，构造函数自动被调用
+    Car car2("蓝色", 1002);     // 创建第 2 辆车
+    car1.display();            // 用「.」调用，因为 car1 是对象本身
+    car2.display();
+    return 0;
     // 提示：创建两个 Car 对象，分别调用 display()
 
-    return 0;
 }

@@ -8,8 +8,7 @@
 //   成绩：90.5
 //
 // 编译运行：VS Code 里按 Ctrl+Shift+B
-// 要求：零编译警告
-// ============================================================
+// 要求：零编译警告         // ← 这个分号最容易漏！// ============================================================
 //
 // 【题目要求原文】
 //   定义一个结构体 Student，包含：
@@ -92,12 +91,29 @@
 #include <iostream>
 
 // ↓↓↓ 从这里开始写你的代码 ↓↓↓
-
+struct Student {
+    char name [50];
+    int id;
+    float score;
+};
+void input(Student* p) {
+    std::cin >>p->name;
+    std::cin >> p->id;
+    std::cin >> p->score;
+}
+void display(Student* p) {
+    std::cout << "姓名：" << p->name << '\n';
+    std::cout << "学号：" << p->id << '\n';
+    std::cout << "成绩：" << p->score << '\n';
+}
 
 // ↑↑↑ 到这里结束 ↑↑↑
 
 int main() {
-    // 提示：动态创建、调用两个函数、记得释放
-
-    return 0;
+    Student* p = new Student;   // 动态创建
+    input(p);
+    display(p);
+    delete p;                   // 释放
+    return 0;// 提示：动态创建、调用两个函数、记得释放
 }
+              
