@@ -1,0 +1,18 @@
+# 编译产物不该进仓库（考核题要求"更改路径即用"，交 .exe 显得很不专业）
+*.exe
+*.o
+*.obj
+*.out
+a.out
+
+# 编辑器 / 系统杂项
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ROS 2 构建产物（如果 exam2 里放了源码）
+build/
+install/
+log/
